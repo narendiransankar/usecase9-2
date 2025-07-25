@@ -115,5 +115,5 @@ jobs:
 
       - name: EKS Deployment + Service + Ingress
         run: |
-          kubectl apply -f ./modules/app/deployment.yaml
-          kubectl apply -f ./modules/app/service.yaml
+          kubectl apply -f ./Api-Flask/deployment.yaml
+          kubectl apply -f ./Api-Flask/service.yaml
