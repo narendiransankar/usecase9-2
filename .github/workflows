@@ -26,7 +26,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: usecase-9/Api-Flask
+        working-directory: usecase-9-2
 
     steps:
       - name: Code checkout
@@ -57,7 +57,7 @@ jobs:
 
   #   defaults:
   #     run:
-  #       working-directory: usecase-9/Api-Flask
+  #       working-directory: usecase-9-2/Api-Flask
 
   #   steps:
   #     - name: Code checkout
