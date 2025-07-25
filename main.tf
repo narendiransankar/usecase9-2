@@ -46,7 +46,7 @@ module "eks_cluster" {
   source = "./modules/eks-cluster"
 
   cluster_name     = var.cluster_name
-  cluster_role_arn = "arn:aws:iam::012889719104:role/AmazonEKSAutoClusterRole"
+  cluster_role_arn = module.iam.eks_cluster_role_arn
   subnet_ids       = [var.subnet_id_1, var.subnet_id_2]
 }
 
@@ -55,7 +55,7 @@ module "eks_node_group" {
 
   cluster_name    = var.cluster_name
   node_group_name = "my-workernodes"
-  node_role_arn   = "arn:aws:iam::012889719104:role/AmazonEKSAutoNodeRole"
+  node_role_arn   = module.iam.node_group_role_arn
   subnet_ids      = [var.subnet_id_1, var.subnet_id_2]
   instance_types  = ["t2.medium"]
   desired_size    = 2
