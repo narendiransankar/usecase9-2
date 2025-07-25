@@ -8,7 +8,7 @@ on:
     #   - '.github/workflows/deploy_uc5.yml'
     # branches: main
 env:
-  AWS_REGION: ap-south-1
+  AWS_REGION: us-east-1
   EKS_REPO: 012889719104.dkr.ecr.ap-south-1.amazonaws.com/api-flask-repo
 
   
@@ -56,8 +56,8 @@ jobs:
            pwd
            docker build -t api-flask-repo .
            docker images
-           ocker tag python-kubernetes:latest 012889719104.dkr.ecr.ap-south-1.amazonaws.com/api-flask-repo:latest
-           docker push 836837432401.dkr.ecr.us-east-1.amazonaws.com/flask-app:cicd
+           ocker tag api-flask-repo:latest 012889719104.dkr.ecr.ap-south-1.amazonaws.com/api-flask-repo:latest
+           docker push 012889719104.dkr.ecr.ap-south-1.amazonaws.com/api-flask-repo:latest
 
 
       - name: Configure kubeconfig
