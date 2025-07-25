@@ -20,9 +20,9 @@ jobs:
   terraform-usecase-9:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: usecase-9
+    # defaults:
+    #   run:
+    #     working-directory: usecase-9
 
     steps:
       - name: Code checkout
