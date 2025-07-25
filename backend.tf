@@ -1,9 +1,9 @@
 # Backend Configuration
 terraform {
   backend "s3" {
-    bucket = "pranjal71025"
-    key    = "uc-01/terraform.tfstate"
+    bucket = "new-state-temp"
+    key    = "uc-09/terraform.tfstate"
     use_lockfile = false
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
