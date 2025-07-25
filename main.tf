@@ -13,36 +13,36 @@ provider "aws" {
   region = var.region
 }
 
-module "iam" {
-  source = "./modules/iam"
+#module "iam" {
+#  source = "./modules/iam"
 
-  cluster_role_name = "devops-eks-iam-role"
-  cluster_assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [{
-      Effect    = "Allow"
-      Principal = { Service = "eks.amazonaws.com" }
-      Action    = "sts:AssumeRole"
-    }]
-  })
+#  cluster_role_name = "devops-eks-iam-role"
+#  cluster_assume_role_policy = jsonencode({
+#    Version = "2012-10-17"
+#    Statement = [{
+#      Effect    = "Allow"
+#      Principal = { Service = "eks.amazonaws.com" }
+##      Action    = "sts:AssumeRole"
+#    }]
+ # })
 
-  node_role_name = "eks-node-group-example"
-  node_assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [{
-      Effect    = "Allow"
-      Principal = { Service = "ec2.amazonaws.com" }
-      Action    = "sts:AssumeRole"
-    }]
-  })
+  ##node_role_name = "eks-node-group-example"
+  #node_assume_role_policy = jsonencode({
+  #  Version = "2012-10-17"
+  #  Statement = [{
+  #    Effect    = "Allow"
+  #    Principal = { Service = "ec2.amazonaws.com" }
+  #    Action    = "sts:AssumeRole"
+  #3  }]
+  #})
 
-  node_group_policy_arns = [
-    "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
-    "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
-    "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-  ]
-}
-
+ # node_group_policy_arns = [
+ #   "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+ #   "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+ #   "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+ # ]
+#}#
+#
 module "eks_cluster" {
   source = "./modules/eks-cluster"
 
