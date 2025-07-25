@@ -78,7 +78,7 @@ jobs:
           cd Api-Flask/
           aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 012889719104.dkr.ecr.ap-south-1.amazonaws.com
           docker build -t api-flask-repo .
-          docker tag python-kubernetes:latest 012889719104.dkr.ecr.ap-south-1.amazonaws.com/api-flask-repo:latest
+          docker tag api-flask-repo:latest 012889719104.dkr.ecr.ap-south-1.amazonaws.com/api-flask-repo:latest
           docker push 012889719104.dkr.ecr.ap-south-1.amazonaws.com/api-flask-repo:latest
 
   kubernetes:
